@@ -32,7 +32,7 @@
             <span class="field">Address: </span><span class="bold">{{this.team.address}}</span>
           </div>
           <div class="row">
-            <span class="field">Website: </span><a class="bold" :href="team.website">Visit website</a>
+            <span class="field">Website: </span><a class="bold" :href="team.website">Visit Website</a>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default Vue.extend({
 
   #image-wrapper {
     background-color: white;
-    width: 160px;
+    width: 180px;
     height: 220px;
   }
 
@@ -143,7 +143,7 @@ export default Vue.extend({
     }
 
     #image-wrapper {
-      width: 120px;
+      width: 130px;
       height: 160px;
       align-self: center;
     }
