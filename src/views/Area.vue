@@ -12,12 +12,12 @@
         v-bind:key="team.id"
         :id="team.id"
         :name="team.name"
-        :linkTo="'About'"
+        :linkTo="'Team'"
       />
     </div>
     <div class="empty" v-else-if="loading">
       <span class="page-title">
-        Please wait!
+        Loading, Please wait!
       </span>
     </div>
     <div class="empty" v-else>
@@ -45,10 +45,10 @@ export default Vue.extend({
     }
   },
   methods: {
-    fetchTeam: function() {
+    fetchTeams: function() {
       axios({
         method: 'GET',
-        url: `https://api.football-data.org/v2/teams?areas=${this.$route.params.areaId}`,
+        url: `https://api.football-data.org/v2/teams?areas=${this.$route.params.id}`,
         headers: { 'X-Auth-Token': '0e7a5cbdc3d740188391d541fc010011' }
       })
         .then((response) => {
@@ -67,7 +67,7 @@ export default Vue.extend({
   },
   created() {
     this.loading = true
-    this.fetchTeam()
+    this.fetchTeams()
   }
 })
 </script>

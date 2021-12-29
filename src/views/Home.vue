@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <span class="page-title">
-      Find Football Team by Area
+      Find Football Team by Selecting Area
     </span>
     <div class="container">
       <Card
@@ -31,7 +31,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    fetchArea: function() {
+    fetchAreas: function() {
       axios({
         method: 'GET',
         url: 'https://api.football-data.org/v2/areas',
@@ -48,7 +48,7 @@ export default Vue.extend({
     }
   },
   created() {
-    this.fetchArea()
+    this.fetchAreas()
   }
 });
 </script>

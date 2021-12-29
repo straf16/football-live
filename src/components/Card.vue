@@ -13,7 +13,7 @@ export default Vue.extend({
   props: [ 'id', 'name', 'linkTo' ],
   methods: {
     handleClick: function() {
-      router.push({ name: this.linkTo, params: { areaId: this.id }, query: { select: this.name} })
+      router.push({ name: this.linkTo, params: { id: this.id }, query: { select: this.name} })
     }
   }
 })
