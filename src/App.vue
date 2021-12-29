@@ -26,4 +26,14 @@ export default Vue.extend({
 body {
   margin: 0;
 }
+
+.wrapper {
+  margin: 24px 48px;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    margin: 16px;
+  }
+}
 </style>

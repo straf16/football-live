@@ -13,7 +13,7 @@ export default Vue.extend({
 
 <style scoped>
   #navbar {
-    padding: 24px;
+    padding: 24px 48px;
     background-color: #42b983;
   }
 
