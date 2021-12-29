@@ -26,5 +26,6 @@ export default Vue.extend({
     border-radius: 8px;
     background-color: #e7ecf3;
     text-align: center;
+    cursor: pointer;
   }
 </style>

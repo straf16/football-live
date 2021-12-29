@@ -36,6 +36,9 @@
           </div>
         </div>
       </div>
+      <div>
+        <SquadList :squad="team.squad"/>
+      </div>
     </div>
   </div>
 </template>
@@ -43,9 +46,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import axios from 'axios'
+import SquadList from '@/components/SquadList.vue'
 
 export default Vue.extend({
   name: 'Team',
+  components: {
+    SquadList
+  },
   data() {
     return {
       loading: false,
@@ -92,6 +99,7 @@ export default Vue.extend({
 
   #detail {
     display: flex;
+    flex-direction: column;
     margin: 48px 0;
     padding: 16px;
     background-color: #f8f8f8;
@@ -100,6 +108,7 @@ export default Vue.extend({
 
   #team-profile {
     display: flex;
+    margin-bottom: 48px;
   }
 
   #image-wrapper {
