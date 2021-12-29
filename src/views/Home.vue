@@ -9,7 +9,7 @@
         v-bind:key="area.id"
         :id="area.id"
         :name="area.name"
-        :linkTo="'Team'"
+        :linkTo="'Area'"
       />
     </div>
   </div>

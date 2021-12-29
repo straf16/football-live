@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
-    <span class="page-link" v-on:click="handleBack">
+    <div class="page-link" v-on:click="handleBack">
       BACK
+    </div>
+    <span class="page-title">
+      Selected Area: {{ this.$route.query.select }}
     </span>
     <div class="container" v-if="teams.length > 0">
       <Card
@@ -31,7 +34,7 @@ import Card from '@/components/Card.vue'
 import axios from 'axios'
 
 export default Vue.extend({
-  name: 'Team',
+  name: 'Area',
   components: {
     Card
   },
@@ -77,6 +80,7 @@ export default Vue.extend({
   .page-link {
     font-size: 16px;
     color: #42b983;
+    margin-bottom: 16px;
   }
 
   .container {
@@ -91,6 +95,7 @@ export default Vue.extend({
   .empty {
     display: flex;
     justify-content: center;
+    padding: 16px 8px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -98,6 +103,10 @@ export default Vue.extend({
       display: flex;
       flex-direction: column;
       margin: 8px 0;
+    }
+
+    .page-title {
+      font-size: 20px;
     }
   }
 </style>
