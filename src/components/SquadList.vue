@@ -6,7 +6,7 @@
       <span class="title-column">Nationality</span>
       <span class="title-column">Position</span>
     </div>
-    <div class="squad-list" v-for="(player, index) in squad" v-bind:key="player.id">
+    <div class="squad-list" v-for="(player, index) in squad" v-bind:key="player.id" v-on:click="handleClick(player.id)">
       <span class="player-detail">{{ index + 1 }}</span>
       <span class="player-detail">{{ player.name }}</span>
       <span class="player-detail">{{ player.nationality }}</span>
@@ -16,14 +16,15 @@
 </template>
 
 <script lang="ts">
+import router from '@/router'
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'SquadList',
   props: ['squad'],
   methods: {
-    getDate(date: Date) {
-      return new Date(date).toDateString()
+    handleClick(id: number) {
+      router.push({ name: 'Player', params: { id: String(id) }})
     }
   }
 })
